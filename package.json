@@ -1,0 +1,36 @@
+{
+  "name": "hackerNews",
+  "version": "1.0.0",
+  "description": "The hackerNews microservice",
+  "main": "hackerNews.js",
+  "scripts": {
+    "test": "nyc --reporter=html mocha --reporter mochawesome",
+    "start": "node service.js",
+    "commit": "commit-wizard",
+    "reinstall": "for i in $(echo application-configuration cache data-access logging security services); do rm -rf node_modules/$i ; done && npm install",
+    "linklibs": "microservicePath=\"$(pwd)\" && for libraryName in $(echo application-configuration cache data-access error logging security services); do rm -rf node_modules/$libraryName && ln -s $microservicePath/../../libraries/$libraryName node_modules/$libraryName ; done"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "node-fetch": "^1.6.3",
+    "nyc": "^10.1.2",
+    "path": "^0.12.7",
+    "seneca": "^3.2.2",
+    "application-configuration": "git+ssh://git@innersource.accenture.com/nmi/application-configuration.git",
+    "cache": "git+ssh://git@innersource.accenture.com/nmi/cache.git",
+    "data-access": "git+ssh://git@innersource.accenture.com/nmi/data-access.git",
+    "error": "git+ssh://git@innersource.accenture.com/nmi/error.git",
+    "logging": "git+ssh://git@innersource.accenture.com/nmi/logging.git",
+    "security": "git+ssh://git@innersource.accenture.com/nmi/security.git",
+    "services": "git+ssh://git@innersource.accenture.com/nmi/services.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "mochawesome": "^2.3.0",
+    "newman": "^3.8.0"
+  }
+}

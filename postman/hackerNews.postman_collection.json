@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "hackerNews",
+		"_postman_id": "4b177557-d5d0-035e-090b-10bb8cea7f9c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:3010/apigateway",
+			"request": {
+				"url": "127.0.0.1:3010/apigateway",
+				"method": "GET",
+				"header": [
+					{
+						"key": "service",
+						"value": "hackerNews",
+						"description": ""
+					},
+					{
+						"key": "operation",
+						"value": "latest",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
